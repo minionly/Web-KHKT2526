@@ -1,0 +1,44 @@
+version: '3.9'
+services:
+  tnkn-nckh-streamlit:
+    build:
+      context: .                  # Folder containing the Dockerfile (usually your app root)
+      dockerfile: Dockerfile
+    image: tnkn-nckh-streamlit-app          # Name of the built image (you can change this)
+    container_name: tnkn-nckh-streamlit-app
+    restart: always       # Automatically restart if it crashes or server reboots
+    ports:
+      - "8501:8501"               # Map host port 8501 → container port 8501
+      # Optional: expose on standard HTTP/HTTPS ports (requires reverse proxy for HTTPS)
+      # - "80:8501"
+      # - "443:8501"
+    expose:
+      - "8501"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+      # Optional: persist code changes without rebuilding (useful in development)
+      # - .:/app
+    environment:
+      # Optional Streamlit configuration (can also be set via .streamlit/config.toml)
+      - STREAMLIT_SERVER_HEADLESS=true
+      - STREAMLIT_SERVER_ENABLECORS=false
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+
+    networks:
+      - global_network
+
+    # Uncomment if you want to run on standard ports behind a reverse proxy (e.g. Nginx, Traefik)
+    # labels:
+    #   - "traefik.enable=true"
+    #   - "traefik.http.routers.streamlit.rule=Host(`your-domain.com`)"
+
+networks:
+  global_network:
+    driver: bridge
+    external: true
+    #   - "traefik.http.services.streamlit.loadbalancer.server.port=8501"
