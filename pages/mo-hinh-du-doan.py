@@ -46,17 +46,17 @@ def show():
         with col_a:
             ptpn11_input = st.number_input(
                 "CT PTPN11",
-                min_value=-10000000.0, max_value=10000000.0, value=0.12, step=0.01, format="%.9f"
+                min_value=-10000000.0, max_value=10000000.0, value=0.12, step=0.01, format="%.3f"
             )
         with col_b:
             mical2_input = st.number_input(
                 "CT MICAL2",
-                min_value=-10000000.0, max_value=10000000.0, value=0.12, step=0.01, format="%.9f"
+                min_value=-10000000.0, max_value=10000000.0, value=0.12, step=0.01, format="%.3f"
             )
         with col_c:
             ref_input = st.number_input(
                 "CT GAPDH (Reference)",
-                min_value=-10000000.0, max_value=10000000.0, value=0.12, step=0.01, format="%.9f"
+                min_value=-10000000.0, max_value=10000000.0, value=0.12, step=0.01, format="%.3f"
             )
         submitted = st.form_submit_button(label="Tính toán")
 
