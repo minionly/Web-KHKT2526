@@ -46,21 +46,18 @@ def show():
         with col_a:
             ptpn11_input = st.number_input(
                 "CT PTPN11",
-                min_value=-10.0, max_value=10.0, value=0.12, step=0.01, format="%.9f"
+                min_value=-10000000.0, max_value=10000000.0, value=0.12, step=0.01, format="%.9f"
             )
-            st.caption("Protein Tyrosine Phosphatase Non-receptor Type 11")
         with col_b:
             mical2_input = st.number_input(
                 "CT MICAL2",
-                min_value=-10.0, max_value=10.0, value=0.12, step=0.01, format="%.9f"
+                min_value=-10000000.0, max_value=10000000.0, value=0.12, step=0.01, format="%.9f"
             )
-            st.caption("Molecule Interacting with CasL 2")
         with col_c:
             ref_input = st.number_input(
                 "CT GAPDH (Reference)",
-                min_value=-10.0, max_value=10.0, value=0.12, step=0.01, format="%.9f"
+                min_value=-10000000.0, max_value=10000000.0, value=0.12, step=0.01, format="%.9f"
             )
-            st.caption("Molecule Interacting with CasL 2")
         submitted = st.form_submit_button(label="Tính toán")
 
     risk_score = None

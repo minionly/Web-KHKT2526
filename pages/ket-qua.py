@@ -61,11 +61,10 @@ def show():
     st.markdown("---")
     st.markdown("## So sánh hiệu suất các mô hình")
     
-    st.markdown("Chúng tôi đã huấn luyện và so sánh 7 mô hình học máy khác nhau:")
+    st.markdown("So sánh hiệu suất 7 mô hình học máy khác nhau với hai gene PTPN11 và MICAL2:")
     
     model_data = {
         "Mô hình": ["Logistic Regression", "SVM", "KNN", "XGBoost", "AdaBoost", "Random Forest", "Decision Tree"],
-        "Tổ hợp gene tối ưu": ["PTPN11, MICAL2", "PTPN11, MICAL2", "ABCC5, TGFB1I1, PTPN11, SLC36A1", "ABCC5, TGFB1I1, SMARCA2, SLC36A1", "ABCC5, TGFB1I1, PTPN11, MICAL2, SLC36A1", "PTPN11, MICAL2", "MICAL2, NFYC, CD44"],
         "AUC Tập Kiểm Tra": ["0.68", "0.67", "0.59", "0.66", "0.64", "0.64", "0.45"],
         "AUC Tập Độc Lập": ["0.78", "0.77", "0.59", "0.59", "0.66", "0.63", "0.39"],
     }
