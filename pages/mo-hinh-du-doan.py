@@ -22,8 +22,8 @@ sd_mical2 = 0.728255005650431
 sd_ptpn1 = 1.15245995737495
 
 def logistic_regression_predict(ptpn11, mical2, ref):
-    ptpn11 = ((ref - ptpn11)*0.51 + tb_gapdh - tb_ptpn1) / sd_ptpn1
-    mical2 = ((ref - mical2)*0.51 + tb_gapdh - tb_mical2) / sd_mical2
+    ptpn11 = ((ref - ptpn11)- tb_ptpn1) / sd_ptpn1
+    mical2 = ((ref - mical2)- tb_mical2) / sd_mical2
 
     z = a1 * ptpn11 + a2 * mical2 + b
     p = 1 / (1 + math.exp(-z))
