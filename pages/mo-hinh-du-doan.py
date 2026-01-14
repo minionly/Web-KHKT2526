@@ -101,34 +101,42 @@ def show():
         <!DOCTYPE html>
         <html>
         <head>
-            <script src="https://molstar.org/viewer/molstar.js"></script>
+            <meta charset="utf-8">
+            <script type="text/javascript" src="https://chemapps.stolaf.edu/jmol/jsmol/js/JSmol.min.js"></script>
             <style>
                 body {
                     margin: 0;
-                    background: #f8f9fa;
+                    background: #ffffff;
                 }
-                #molstar {
-                    width: 100%;
-                    height: 500px;
-                }
+            #jsmol-app-8wx7 {
+                width: 100%;
+                height: 520px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #ffffff;
+            }
+            .jmol {
+                background-color: #ffffff !important;
+            }
+            #jsmol-app-8wx7 a {
+                display: none !important;
+            }
             </style>
         </head>
         <body>
-            <div id="molstar"></div>
-            <script>
-                molstar.Viewer.create(
-                    document.getElementById('molstar'),
-                    {
-                        layoutShowControls: false,
-                        layoutShowSequence: false,
-                        layoutShowRightPanel: false
-                    }
-                ).then(viewer => {
-                    viewer.loadStructureFromUrl(
-                        'https://files.rcsb.org/download/8WX7.cif',
-                        'mmcif'
-                    );
-                });
+            <div id="jsmol-app-8wx7"></div>
+            <script type="text/javascript">
+            var Info_8wx7 = {
+                width: 480,
+                height: 480,
+                debug: false,
+                color: "0xFFFFFF",
+                j2sPath: "https://chemapps.stolaf.edu/jmol/jsmol/j2s",
+                script: "background white; load https://files.rcsb.org/download/8wx7.cif; cartoons only; color group; spin on;"
+            };
+                document.getElementById("jsmol-app-8wx7").innerHTML =
+                    Jmol.getAppletHtml("jmolApplet_8wx7", Info_8wx7);
             </script>
         </body>
         </html>
@@ -146,34 +154,42 @@ def show():
         <!DOCTYPE html>
         <html>
         <head>
-            <script src="https://molstar.org/viewer/molstar.js"></script>
+            <meta charset="utf-8">
+            <script type="text/javascript" src="https://chemapps.stolaf.edu/jmol/jsmol/js/JSmol.min.js"></script>
             <style>
                 body {
                     margin: 0;
-                    background: #f8f9fa;
+                    background: #ffffff;
                 }
-                #molstar {
-                    width: 100%;
-                    height: 500px;
-                }
+            #jsmol-app-2e9k {
+                width: 100%;
+                height: 520px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #ffffff;
+            }
+            .jmol {
+                background-color: #ffffff !important;
+            }
+            #jsmol-app-2e9k a {
+                display: none !important;
+            }
             </style>
         </head>
         <body>
-            <div id="molstar"></div>
-            <script>
-                molstar.Viewer.create(
-                    document.getElementById('molstar'),
-                    {
-                        layoutShowControls: false,
-                        layoutShowSequence: false,
-                        layoutShowRightPanel: false
-                    }
-                ).then(viewer => {
-                    viewer.loadStructureFromUrl(
-                        'https://files.rcsb.org/download/2E9K.cif',
-                        'mmcif'
-                    );
-                });
+            <div id="jsmol-app-2e9k"></div>
+            <script type="text/javascript">
+            var Info_2e9k = {
+                width: 480,
+                height: 480,
+                debug: false,
+                color: "0xFFFFFF",
+                j2sPath: "https://chemapps.stolaf.edu/jmol/jsmol/j2s",
+                script: "background white; load https://files.rcsb.org/download/2E9K.cif; cartoons only; color group; spin on;"
+            };
+                document.getElementById("jsmol-app-2e9k").innerHTML =
+                    Jmol.getAppletHtml("jmolApplet_2e9k", Info_2e9k);
             </script>
         </body>
         </html>
